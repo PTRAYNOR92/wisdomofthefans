@@ -1,0 +1,12 @@
+// This file should contain the actual logo image.
+// If it's missing, we need to add it.
+
+// Checking if the file exists
+const fs = require('fs');
+if (!fs.existsSync('./public/logo.png')) {
+  console.error("Error: logo.png is missing from the public folder.");
+  console.log("Please add the logo.png file to the public folder.");
+} else {
+  console.log("logo.png found in the public folder.");
+}
+
