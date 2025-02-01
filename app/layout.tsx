@@ -1,21 +1,32 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import "./globals.css"
+import { Inter } from "next/font/google"
+import type React from "react"
+import { Sidebar } from "@/components/Sidebar"
 
-export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+const inter = Inter({ subsets: ["latin"] })
+
+export const metadata = {
+  title: "Wisdom of the Fans",
+  description: "Your voice in football matters",
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en">
-      {/* Add Tailwind classes to <body> */}
-      <body className="bg-gray-100 text-gray-900">{children}</body>
+      <body className={inter.className}>
+        <div className="flex">
+          <Sidebar />
+          <main className="flex-1 ml-64">{children}</main>
+        </div>
+      </body>
     </html>
   )
 }
+
+
+
 
